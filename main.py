@@ -56,4 +56,4 @@ def send_image(filename):
     return send_from_directory("images", filename)
 
 if __name__ == '__main__':
-  app.run()
+  app.run(port=80)
