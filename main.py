@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, send_from_directory
 import urllib
 import numpy as np
-import cv2
 app = Flask(__name__)
 
 @app.route("/",methods=["GET","POST"])
