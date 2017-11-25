@@ -8,7 +8,7 @@ def index():
 
 @app.route("/upload", methods=["POST"])
 def upload():
-    return render_template("complete.html", size=0)
+    return render_template("complete.html")
 
 if __name__ == '__main__':
   app.run()
