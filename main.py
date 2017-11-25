@@ -7,7 +7,11 @@ def index():
     if request.method=='POST':
         #im = Image.open("images/bg.jpg")
         os.mkdir('dir')
-        return render_template("complete.html")
+        with open('dir/text.txt','w') as f:
+            f.write('jljl/r/n')
+        with open('dir/text.txt','r') as f:
+            s=f.readline()
+        return render_template("complete.html", str=s)
     return render_template("upload.html")
 
 if __name__ == '__main__':
