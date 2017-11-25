@@ -2,9 +2,12 @@ from flask import Flask, request, render_template, send_from_directory
 import os
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/",methods=["GET","POST"])
 def index():
-    return render_template("upload.html")
+    if request.method=='POST':
+        return render_template("complete.html")
+    if equest.method=='GET':
+        return render_template("upload.html")
 
 @app.route("/complete", methods=["POST"])
 def upload():
