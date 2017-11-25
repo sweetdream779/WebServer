@@ -1,4 +1,4 @@
---upgrade azure  --pre
+--upgrade pip --pre
 wheel
 Flask==0.12.1
 numpy==1.11.1
