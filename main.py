@@ -9,5 +9,9 @@ def index():
 def send_image(filename):
     return send_from_directory("images", filename)
 
+@app.route("/upload", methods=["POST"])
+def upload():
+    return render_template("complete.html", image_name='temp1.jpg', size=0)
+
 if __name__ == '__main__':
   app.run()
