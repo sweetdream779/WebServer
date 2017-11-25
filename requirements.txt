@@ -1,4 +1,5 @@
-pypi==8.1.1
+--upgrade pip
+wheel
 Flask==0.12.1
 numpy==1.11.1
-opencv-python
+opencv-contrib-python
