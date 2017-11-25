@@ -6,11 +6,8 @@ app = Flask(__name__)
 def index():
     if request.method=='POST':
         #im = Image.open("images/bg.jpg")
-        os.mkdir('dir')
-        with open('dir/text.txt','w') as f:
-            f.write('jljl/r/n')
-        with open('dir/text.txt','r') as f:
-            s=f.readline()
+        with open('haarcascade_frontalface_default.xml','r') as f:
+            s='Yes'
         return render_template("complete.html", str=s)
     return render_template("upload.html")
 
