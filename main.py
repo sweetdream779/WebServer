@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     if request.method=='POST':
         url='https://www.sciencenews.org/sites/default/files/2016/09/main/articles/090816_ls_brain-training_free.jpg'
-        resp = urllib.urlopen(url)
+        #resp = urllib.urlopen(url)
         #image = np.asarray(bytearray(resp.read()), dtype="uint8")
         #image = cv2.imdecode(image, cv2.IMREAD_COLOR)
         return render_template("complete.html")
