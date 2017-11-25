@@ -93,4 +93,3 @@ def get_venv_handler():
     handler = get_wsgi_handler(os.getenv('WSGI_ALT_VIRTUALENV_HANDLER'))
     log('Got handler: %r\n' % handler)
     return handler
-
