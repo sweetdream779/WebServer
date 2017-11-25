@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     if request.method=='POST':
         return render_template("complete.html")
-    if equest.method=='GET':
+    else equest.method=='GET':
         return render_template("upload.html")
 
 @app.route("/complete", methods=["POST"])
