@@ -6,13 +6,9 @@ app = Flask(__name__)
 def index():
     return render_template("upload.html")
 
-@app.route('/upload/<filename>')
-def send_image(filename):
-    return send_from_directory("images", filename)
-
 @app.route("/upload", methods=["POST"])
 def upload():
-    return render_template("complete.html")
+    return render_template("complete.html", size=0)
 
 if __name__ == '__main__':
   app.run()
