@@ -12,7 +12,7 @@ def send_image(filename):
 
 @app.route("/upload", methods=["POST"])
 def upload():
-    return render_template("complete.html", image_name='temp1.jpg', size=0)
+    return render_template("complete.html")
 
 if __name__ == '__main__':
   app.run()
