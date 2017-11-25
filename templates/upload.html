@@ -31,10 +31,10 @@
 
     <form class="col-md-4 col-md-offset-4" id="upload-form" method="POST" action="/" enctype="multipart/form-data">
     <div class="form-group margin">
-        <p class="text-md-left row margin_bottom">Please choose one image:</p>
+        <p class="text-md-left row margin_bottom">Please enter image URL:</p>
 
         <div class="row margin_bottom">
-            <input class="btn btn-default" id="file-picker" type="file" name="file" accept="image/*">
+            <input id="file-picker" type="text" name="text">
         </div>
         <div id="msg" class="row font-italic text-sm-left margin_bottom">
             
@@ -49,7 +49,7 @@
     $("#file-picker").change(function(){
         var input = document.getElementById('file-picker');
 
-            var ext= input.files[0].name.substring(input.files[0].name.lastIndexOf('.')+1).toLowerCase()
+            /*var ext= input.files[0].name.substring(input.files[0].name.lastIndexOf('.')+1).toLowerCase()
             if ((ext == 'jpg') || (ext == 'png'))
             {
                 $("#msg").text("File is supported")
@@ -58,7 +58,7 @@
             {
                 $("#msg").text("File is NOT supported")
                 document.getElementById("file-picker").value ="";
-            }
+            }*/
     } );
 </script>
 </html>
