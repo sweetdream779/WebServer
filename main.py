@@ -2,11 +2,25 @@ from flask import Flask, request, render_template, send_from_directory
 
 app = Flask(__name__)
 
+def count_words(file):
+    pass
+
+
+def count_chars(file):
+    pass
+
+
 @app.route("/",methods=["GET","POST"])
 def index():
     if request.method=='POST':
         f = request.files['file']
-        s=f.read()
+        i=0
+        for line in f:
+            s=f.readline()
+            i++
+            if i==1:
+                break
+        
         return render_template("complete.html",text=s)
     return render_template("upload.html")
 
