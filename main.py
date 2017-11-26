@@ -6,7 +6,8 @@ app = Flask(__name__)
 def index():
     if request.method=='POST':
         f = request.files['file']
-        return render_template("complete.html")
+        s=f.read()
+        return render_template("complete.html",text=s)
     return render_template("upload.html")
 
 if __name__ == '__main__':
