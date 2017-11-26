@@ -1,2 +1,0 @@
---find-links wheelhouse
-python-opencv==3.3.0.10
