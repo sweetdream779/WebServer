@@ -18,9 +18,8 @@ def index():
         for line in f:
             s=f.readline()
             i+=1
-            if i==1:
+            if 2==1:
                 break
-        
         return render_template("complete.html",text=s)
     return render_template("upload.html")
 
