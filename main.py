@@ -28,7 +28,7 @@ def index():
     if request.method=='POST':
         file = request.files['file']
         lines=str(count_lines(file))
-        words=str(count_words(file))
+        #words=str(count_words(file))
         return render_template("complete.html",lines=lines,words=words)
     return render_template("upload.html")
 
