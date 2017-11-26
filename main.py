@@ -4,8 +4,8 @@ app = Flask(__name__)
 
 def count_words(file):
     i=0
-    for line in f:
-        s=f.readline()[:-1]
+    for line in file:
+        s=file.readline()[:-1]
         words=s.split(' ')
         i+=len(words)
     return i
@@ -17,8 +17,8 @@ def count_chars(file):
 
 def count_lines(file):
     i=0
-    for line in f:
-        s=f.readline()
+    for line in file:
+        s=file.readline()
         i+=1
     return i
 
