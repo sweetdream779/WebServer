@@ -16,7 +16,7 @@ def index():
         f = request.files['file']
         i=0
         for line in f:
-            s=f.readline()
+            s=f.readline()[2:-1]
             i+=1
             if 2==1:
                 break
