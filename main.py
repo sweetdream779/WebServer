@@ -20,9 +20,10 @@ def count_words_chars_lines(file):
 
 def wordCount(line):
     words=line.split(' ')
+    l=len(words)
     if len(line)>0 and len(words)==0:
-        return 1
-    return len(words)
+        l=1
+    return l
 
 
 
