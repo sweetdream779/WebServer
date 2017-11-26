@@ -17,7 +17,7 @@ def index():
         i=0
         for line in f:
             s=f.readline()
-            i++
+            i+=1
             if i==1:
                 break
         
