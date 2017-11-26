@@ -8,7 +8,7 @@
 
 <style>
    body {
-    background-image: url('https://www.sciencenews.org/sites/default/files/2016/09/main/articles/090816_ls_brain-training_free.jpg');
+    background-image: url('http://waucondastore.com/wp-content/uploads/2012/05/Approaches-of-J.S.-Petofi-and-K.-Brinker-to-the-Study-of-the-Text-1.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
    }
@@ -18,47 +18,68 @@
    .margin_bottom{
         margin-bottom: 3%;
    }
-   form{
-        background-color:rgba(255, 255, 255, 0.7);
+   .margin_top{
+        margin-top: 20%;
+   }
+   form, .result{
+        color:white;
+        background-color:rgba(0, 0, 0, 0.7);
         border-style: outset;
         border-width: 5px;
+        display: inline-block; 
    }
-  </style>
+   .page-header{
+        color:white;
 
+   }
+   h1{
+        background-color:rgba(0, 0, 0, 0.7);
+   }
+</style>
+<script>
+    var someJavaScriptVar = '{{ notvisibility }}';
+    $(document).ready(function(){
+        if (someJavaScriptVar==1){
+            if($('.result').length == 0) {
+                
+                $( "form" ).removeClass( "col-md-offset-4" ).addClass( "col-md-offset-2" );
+                $( "span" ).append("<div class='result col-md-4 col-md-offset-1'><p class='lines .margin_bottom margin_top'>Lines in document: {{lines}}</p><p class='words .margin_bottom'>Words in document: {{words}}</p><p class='chars .margin_bottom'>Chars in document: {{chars}}</p></div>");
+                var h=$( "form" ).height();
+                $('.result').height(h);
+            }
+            else{
+                $('.lines').text("Lines in document: {{lines}}");
+                $('.words').text("Words in document: {{words}}");
+                $('.chars').text("Chars in document: {{chars}}");
+            }
+        }
+        else{
+            if($('.result').length == 1) {
+                $( "form" ).removeClass( "col-md-offset-2" ).addClass( "col-md-offset-4" );
+                $( ".result" ).remove();
+            }
+        }
+    });
+</script>
 </head>
 <body >
-    <h1 class="page-header text-center">FACE FOUNDER</h1>
+    <h1 class="page-header text-center" class='block'>TEXT COUNTER</h1>
+    <span>
+        <form class="col-md-4 col-md-offset-4" id="upload-form" method="POST" action="/" enctype="multipart/form-data">
+        <div class="form-group margin">
+            <p class="text-md-left row margin_bottom">Please select text document:</p>
 
-    <form class="col-md-4 col-md-offset-4" id="upload-form" method="POST" action="/" enctype="multipart/form-data">
-    <div class="form-group margin">
-        <p class="text-md-left row margin_bottom">Please enter image URL:</p>
-
-        <div class="row margin_bottom">
-            <input class="btn btn-default" id="file-picker" type="file" name="file" accept="text/plain">
+            <div class="row margin_bottom">
+                <input class="btn btn-default" id="file-picker" type="file" name="file" accept="text/plain">
+            </div>
+            <div id="msg" class="row font-italic text-sm-left margin_bottom">
+                
+            </div>
+            <div class="row margin_bottom">
+                <input class="btn btn-default" type="submit"  value="Upload" id="upload-button">
+            </div>
         </div>
-        <div id="msg" class="row font-italic text-sm-left margin_bottom">
-            
-        </div>
-        <div class="row margin_bottom">
-            <input class="btn btn-default" type="submit"  value="Upload" id="upload-button">
-        </div>
-    </div>
-    </form>
+        </form>
+    </span>
 </body>
-<script>
-    $("#file-picker").change(function(){
-        var input = document.getElementById('file-picker');
-
-            /*var ext= input.files[0].name.substring(input.files[0].name.lastIndexOf('.')+1).toLowerCase()
-            if ((ext == 'jpg') || (ext == 'png'))
-            {
-                $("#msg").text("File is supported")
-            }
-            else
-            {
-                $("#msg").text("File is NOT supported")
-                document.getElementById("file-picker").value ="";
-            }*/
-    } );
-</script>
 </html>
