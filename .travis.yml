@@ -5,5 +5,5 @@ python:
 install:
     - "pip install -r requirements.txt"
     - "pip install pytest pytest-cov pytest-flask"
-script: python main.py
+script: pytest test_web.py
 
