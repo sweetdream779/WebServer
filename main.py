@@ -35,4 +35,4 @@ def index():
     return render_template("upload.html", notvisibility=0)
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run()
