@@ -1,4 +1,5 @@
+pip==9.0.1
 wheel==0.30.0
 Flask==0.12.1
 numpy==1.11.1
-opencv-cython
+opencv-python
