@@ -69,7 +69,7 @@ def index():
 
 @app.route("/compare",methods=["POST"])
 def compare():
-    return render_template("compare.html", notvisibility=0)
+    return render_template("<p>lsfdkjf</p>", notvisibility=0)
 
 @app.route("/compare/result",methods=["POST"])
 def compare_res():
