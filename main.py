@@ -63,7 +63,7 @@ def count_differences(file1,file2):
 
 
 
-@app.route("/")
+@app.route("/",methods=["GET","POST"])
 def index():
         return render_template("index.html")
 
@@ -79,7 +79,7 @@ def compare_res():
         result=count_differences(file1,file2)
         return render_template("compare.html",notvisibility=1,distance=result[0], words1=result[1], words2=result[2], similar=result[3])
     else:
-        return redirect(url_for('compare'))
+        return redirect(url_for('compare', _external=True))
 
 @app.route("/count",methods=["GET","POST"])
 def count():
@@ -93,7 +93,7 @@ def count_res():
         result=count_words_chars_lines(file)
         return render_template("count.html",notvisibility=1,words=result[0], chars=result[1], lines=result[2])
     else:
-        return redirect(url_for('count'))
+        return redirect(url_for('count', _external=True))
 
 if __name__ == '__main__':
   app.run()
