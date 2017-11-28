@@ -7,7 +7,7 @@ def count_words_chars_lines(file):
     words_count=0
     chars_count=0
     existWords=[]
-    str_words=""
+    d=", "
     for line in file:
         line=line.decode()
         if(len(line.split('\n'))>1):
@@ -16,9 +16,8 @@ def count_words_chars_lines(file):
             line=line.split('\r\n')[0]
         chars_count+=len(line)
         words_count+=wordCount(line,existWords)
-        str_words.join(existWords)
         lines_count+=1
-    
+    str_words=d.join(existWords)
     return [str(words_count), str(chars_count), str(lines_count), str_words]
 
 
