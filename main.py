@@ -27,13 +27,25 @@ def wordCount(line):
 
 
 
-@app.route("/",methods=["GET","POST"])
+@app.route("/")
 def index():
+        return render_template("index.html")
+
+@app.route("/compare",methods=["POST"])
+def compare():
     if request.method=='POST':
         file = request.files['file']
         result=count_words_chars_lines(file)
         return render_template("upload.html",notvisibility=1,words=result[0], chars=result[1], lines=result[2])
-    return render_template("upload.html", notvisibility=0)
+return render_template("upload.html", notvisibility=0)
+
+@app.route("/count",methods=["POST"])
+def count():
+    if request.method=='POST':
+        file = request.files['file']
+        result=count_words_chars_lines(file)
+        return render_template("upload.html",notvisibility=1,words=result[0], chars=result[1], lines=result[2])
+return render_template("upload.html", notvisibility=0)
 
 if __name__ == '__main__':
   app.run()
