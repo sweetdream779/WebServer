@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<style>
+   body {
+    background-image: url('http://waucondastore.com/wp-content/uploads/2012/05/Approaches-of-J.S.-Petofi-and-K.-Brinker-to-the-Study-of-the-Text-1.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+   }
+   .margin{
+        margin: 20%;
+   }
+   .margin_bottom{
+        margin-bottom: 3%;
+   }
+   .margin_top{
+        margin-top: 20%;
+   }
+   form{
+        color:white;
+        background-color:rgba(0, 0, 0, 0.7);
+        border-style: outset;
+        border-width: 5px;
+        display: inline-block; 
+   }
+   .page-header{
+        color:white;
+
+   }
+   h1{
+        background-color:rgba(0, 0, 0, 0.7);
+   }
+</style>
+
+</head>
+<body >
+    <h1 class="page-header text-center" class='block'>TEXT COUNTER</h1>
+    <p class="text-md-left margin_bottom">Please choose what you want: compare two documents or count lines, words and chars in a document.</p>
+    <span>
+        <form class="col-md-4 col-md-offset-4" id="upload-form" method="POST" action="{{ url_for('count') }}" enctype="multipart/form-data">
+        <div class="form-group margin">
+            <div class="row margin_bottom">
+                <input class="btn btn-default" type="submit"  value="Count" id="count-button">
+            </div>
+        </div>
+        </form>
+        
+        <form class="col-md-4 col-md-offset-2" id="upload-form" method="POST" action="{{ url_for('compare') }}" enctype="multipart/form-data">
+        <div class="form-group margin">
+            <div class="row margin_bottom">
+                <input class="btn btn-default" type="submit"  value="Compare" id="compare-button">
+            </div>
+        </div>
+        </form>
+    </span>
+    <div class='unicWords col-md-8 col-md-offset-9'>        
+    </div>
+ </body>
+</html>
