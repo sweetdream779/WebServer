@@ -38,7 +38,6 @@
 </style>
 <script>
     var someJavaScriptVar = '{{ notvisibility }}';
-    var unikWords = '{{ unikWords }}';
     $(document).ready(function(){
         if (someJavaScriptVar==1){
             if($('.result').length == 0) {
@@ -47,7 +46,6 @@
                 $( "span" ).append("<div class='result col-md-4 col-md-offset-1'><p class='lines .margin_bottom margin_top'>Lines in document: {{lines}}</p><p class='words .margin_bottom'>Words in document: {{words}}</p><p class='chars .margin_bottom'>Chars in document: {{chars}}</p></div>");
                 var h=$( "form" ).height();
                 $('.result').height(h);
-                $('.unicWords').text(unikWords);
             }
             else{
                 $('.lines').text("Lines in document: {{lines}}");
@@ -59,7 +57,6 @@
             if($('.result').length == 1) {
                 $( "form" ).removeClass( "col-md-offset-2" ).addClass( "col-md-offset-4" );
                 $( ".result" ).remove();
-                $('.unicWords').text("");
             }
         }
     });
