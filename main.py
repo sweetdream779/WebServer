@@ -69,7 +69,8 @@ def index():
 
 @app.route("/compare",methods=["GET","POST"])
 def compare():
-    return render_template("compare.html", notvisibility=0)
+    results_page = "textcounter.azurewebsites.net/compare"
+    return render_template("compare.html", notvisibility=0,results_page=results_page)
 
 @app.route("/compare/result",methods=["POST"])
 def compare_res():
