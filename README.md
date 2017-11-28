@@ -4,5 +4,5 @@
 [![Travis](https://travis-ci.org/sweetdream779/WebServer.svg?branch=master)](https://travis-ci.org/sweetdream779/WebServer)
 
 This web service allow you to count lines, words and chars in uploaded text file.
-See [WordCounter](http://textcounter.azurewebsites.net/). 
+See [WordCounter](http://text2counter.azurewebsites.net/). 
 
