@@ -63,13 +63,13 @@ def count_differences(file1,file2):
 
 
 
-@app.route("/",methods=["GET","POST"])
+@app.route("/")
 def index():
-        return render_template("compare.html")
+        return render_template("index.html")
 
 @app.route("/compare",methods=["GET","POST"])
 def compare():
-    return render_template("compare.html")
+    return render_template("compare.html",notvisibility=0)
 
 @app.route("/compare/result",methods=["POST"])
 def compare_res():
