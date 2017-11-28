@@ -55,7 +55,7 @@
     <p class="margin_bottom text-center">Please choose what you want: compare two documents or count lines, words and chars in a document.</p>
   </div>
     <span>
-        <form class="col-md-2 col-md-offset-3" id="upload-form" method="POST" action="{{ url_for('count') }}">
+        <form class="col-md-2 col-md-offset-3" id="upload-form1" method="POST" action="{{ url_for('count') }}">
         <div class="form-group margin">
             <div class="row margin_bottom">
                 <input class="btn btn-default" type="submit"  value="Count" id="count-button">
@@ -63,7 +63,7 @@
         </div>
         </form>
         
-        <form class="col-md-2 col-md-offset-2" id="upload-form" method="POST" action="{{ url_for('compare') }}">
+        <form class="col-md-2 col-md-offset-2" id="upload-form2" method="POST" action="{{ url_for('compare') }}">
         <div class="form-group margin">
             <div class="row margin_bottom">
                 <input class="btn btn-default" type="submit"  value="Compare" id="compare-button">
