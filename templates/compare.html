@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<style>
+   body {
+    background-image: url('http://waucondastore.com/wp-content/uploads/2012/05/Approaches-of-J.S.-Petofi-and-K.-Brinker-to-the-Study-of-the-Text-1.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+   }
+   .margin{
+        margin: 20%;
+   }
+   .margin_bottom{
+        margin-bottom: 3%;
+   }
+   .margin_top{
+        margin-top: 20%;
+   }
+   form, .result{
+        color:white;
+        background-color:rgba(0, 0, 0, 0.7);
+        border-style: outset;
+        border-width: 5px;
+        display: inline-block; 
+   }
+   .page-header{
+        color:white;
+
+   }
+   h1{
+        background-color:rgba(0, 0, 0, 0.7);
+   }
+</style>
+<script>
+    var someJavaScriptVar = '{{ notvisibility }}';
+    $(document).ready(function(){
+        if (someJavaScriptVar==1){
+            if($('.result').length == 0) {
+                
+                $( "form" ).removeClass( "col-md-offset-4" ).addClass( "col-md-offset-2" );
+                $( "span" ).append("<div class='result col-md-4 col-md-offset-1'><p class='words1 .margin_bottom margin_top'>Words in document 1: {{words1}}</p><p class='words2 .margin_bottom'>Words in document 2: {{words2}}</p><p class='distance .margin_bottom'>Distance of documents: {{distance}} words</p><p class='similar .margin_bottom'>Count of same words in documents: {{similar}} words</p></div>");
+                var h=$( "form" ).height();
+                $('.result').height(h);
+            }
+            else{
+                $('.words1').text("Words in document 1: {{words1}}");
+                $('.words2').text("Words in document 2: {{words2}}");
+                $('.distance').text("Distance of documents: {{distance}}");
+                $('.similar').text("Count of same words in documents: {{similar}}");
+            }
+        }
+        else{
+            if($('.result').length == 1) {
+                $( "form" ).removeClass( "col-md-offset-2" ).addClass( "col-md-offset-4" );
+                $( ".result" ).remove();
+            }
+        }
+    });
+</script>
+</head>
+<body >
+    <h1 class="page-header text-center" class='block'>TEXT COUNTER</h1>
+    <span>
+        <form class="col-md-4 col-md-offset-4" id="upload-form" method="POST" action="{{ url_for('compare_res') }}" enctype="multipart/form-data">
+        <div class="form-group margin">
+            <p class="text-md-left row margin_bottom">Please select 2 documents:</p>
+
+            <div class="row margin_bottom">
+                <input class="btn btn-default" id="file-picker1" type="file" name="file1" accept="text/plain">
+                <input class="btn btn-default" id="file-picker2" type="file" name="file2" accept="text/plain">
+            </div>
+            <div id="msg" class="row font-italic text-sm-left margin_bottom">
+                
+            </div>
+            <div class="row margin_bottom">
+                <input class="btn btn-default" type="submit"  value="Compare" id="upload-button">
+            </div>
+        </div>
+        </form>
+    </span>
+    <div class='unicWords col-md-8 col-md-offset-9'>        
+    </div>
+ </body>
+</html>
